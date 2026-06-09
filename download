@@ -1,9 +1,11 @@
-[build]
-builder = "NIXPACKS"
-
-[deploy]
-startCommand = "node server.js"
-healthcheckPath = "/"
-healthcheckTimeout = 30
-restartPolicyType = "ON_FAILURE"
-restartPolicyMaxRetries = 3
+services:
+  - type: web
+    name: brushpass-job-board
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production

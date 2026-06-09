@@ -243,7 +243,7 @@ app.patch('/api/admin/users/:id/approve', authMiddleware, adminOnly, (req, res) 
 });
 
 // ── Serve frontend ────────────────────────────────────────────────────────────
-app.get('/{*path}', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 

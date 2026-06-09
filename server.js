@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const fs = require('fs');
-const initSqlJs = require('sql.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
